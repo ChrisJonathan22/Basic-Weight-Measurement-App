@@ -1,0 +1,18 @@
+#holder {
+    text-align: center;
+    padding-top: 10px;
+}
+
+#weightList {
+    text-align: center;
+    padding-top: 10px;
+}
+
+#list {
+    list-style: none;
+}
+
+#list li {
+    font-weight: bold;
+}
+
