@@ -11,13 +11,14 @@ export class MyWeightComponent implements OnInit {
 
   ngOnInit() {
 
+    // This is the ul element
     let list = document.getElementById("list");
-    let date = new Date();
-    let day = date.getDate();
-    let month = date.getMonth();
-    let year = date.getFullYear();
+
+    // Create an instance of the date object and extract the day, month and year
+    // The date and time will have to be injected within the POST request otherwise every weight recorded will be displayed with the same date and time every day
     
-    // fetch data from my api by doing a GET request or POST
+
+    // GET request URL
     let user = "http://localhost:3000/userWeight";
   
     fetch(user)
@@ -26,9 +27,13 @@ export class MyWeightComponent implements OnInit {
         return response.json();
     })
     .then((result) => {
+      // Once the the data is received which is an array,loop through it
       for(let i = 0; i < result.userWeight.length; i++){
+        // Create li elements for every item in the array
         let listItem = document.createElement("li");
-        listItem.innerHTML = `You weigh ${result.userWeight[i]} - ${day}/${month}/${year} `;
+        // Add this message to every li element with weight, date and time
+        listItem.innerHTML = `You weigh ${result.userWeight[i]}`;
+        // Append the listItem to the ul element
         list.appendChild(listItem);
       }
   });
