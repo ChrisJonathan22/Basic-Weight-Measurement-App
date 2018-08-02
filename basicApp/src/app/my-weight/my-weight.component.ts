@@ -32,7 +32,7 @@ export class MyWeightComponent implements OnInit {
         // Create li elements for every item in the array
         let listItem = document.createElement("li");
         // Add this message to every li element with weight, date and time
-        listItem.innerHTML = `You weigh ${result.userWeight[i]}`;
+        listItem.innerHTML = `${result.userWeight[i]}`;
         // Append the listItem to the ul element
         list.appendChild(listItem);
       }

@@ -81,7 +81,7 @@ app.get('/userWeight', (req,res) => {
 // Update the document which matches the id below and push the value within the date & time below into the weight array
 app.post('/updateWeight', (req,res) => {
     
-    Weights.update({ _id: "5b58cec31ace28d8d59834af" },{ $push:   {weight: `${req.body.weight} ${req.body.info}`}  }, {}, (err, task) => {
+    Weights.update({ _id: "5b58cec31ace28d8d59834af" },{ $push:   {weight: `${req.body.name} weighs ${req.body.weight} ${req.body.info}`}  }, {}, (err, task) => {
     if(err) res.json({errorMessage : err});
 
     else {

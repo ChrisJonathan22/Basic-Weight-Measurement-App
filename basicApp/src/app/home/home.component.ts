@@ -17,6 +17,9 @@ export class HomeComponent implements OnInit {
      // Due to TypeScript being typesafe value doesn't exist in an HTMLElement but it does exist in HTMLInputElement which is why I have wrapped it around the Input element.
      let textInput = (<HTMLInputElement>document.getElementById('textInput'));
 
+    //  Store the text input element (name)
+    let name = (<HTMLInputElement>document.getElementById('name'));
+
     // This is a h3 element where the success message will be displayed
     let message = document.getElementById("message");
   
@@ -33,18 +36,26 @@ export class HomeComponent implements OnInit {
 
       // Value is the data typed into the textInput
       let value = textInput.value;
+
+      // Store the name value
+      let nameValue = name.value;
       
       // Create a JSON object to hold the value which will be passed onto the POST request
       const body = {
+        name: nameValue,
         weight: value,
         info: `${day}/${month}/${year} - ${hours}:${minutes}`
       };
 
       // After the value has been captured, the input field is reset
       textInput.value = "";
+
+      // After the name has been captured, the input field is reset
+      name.value = "";
       
       // This is just some feedback to let me know that it's working in some capacity
       console.log("It works!!!");
+      // Comment!!!
 
       // Display success message
       message.innerHTML = "Your weight has been successfully recorded.";
@@ -72,6 +83,7 @@ export class HomeComponent implements OnInit {
 
     }
 
+  
     // The button event listener which triggers the function saveInfo
     button.addEventListener('click', saveInfo, false);
 
