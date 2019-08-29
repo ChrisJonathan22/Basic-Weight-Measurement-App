@@ -1,6 +1,6 @@
 # Basic-Weight-Measurement-App
 
-This is a basic weight measurement app which takes the user's weight measurement, sends it to the database and then displays it with the date/time of when it was created.
+This is a weight measurement app which takes the user's weight measurement, sends it to the database and then displays it with the date/time of when it was created.
 
 Once forked, whilst within the root folder and in the Terminal type in "npm install" to install all the dependencies.
 
